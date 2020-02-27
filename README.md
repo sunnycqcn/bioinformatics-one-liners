@@ -675,8 +675,13 @@ awk -v OFS="\t" '{"echo "$3 "| rev" | getline $5}{print $0}'
 perl -lane 'BEGIN{$,="\t"}{$rev=reverse $F[2];print $F[0],$F[1],$rev,$F[3]}
 ```
 ###Get chromosome sizes from fasta file
+
 pip install pyfaidx
+
 faidx input.fasta -i chromsizes > sizes.genome
+
 ######################################
 samtools faidx input.fa
+
 cut -f1,2 input.fa.fai > sizes.genome
+
